@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linkedin Scraper</title>
+</head>
+<body>
+<form method="POST">
+    {% csrf_token %}
+    <label for="email">Email Id</label>
+    <input id="email" type="email" name="email">
+    <label for="password">Password</label>
+    <input id="password" type="password" name="password">
+    <label for="url">Single Url</label>
+    <input id="url" type="text" name="url">
+    <label for="url_file">Bulk Url</label>
+    <input id="url_file" type="file" accept=".csv" name="url_file">
+    <button type="submit">Submit</button>
+</form>
+<p>
+    {% if message %}
+        {{ message }}
+    {% endif %}
+</p>
+</body>
+</html>
